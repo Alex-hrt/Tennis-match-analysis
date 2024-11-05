@@ -1,0 +1,1 @@
+You can find the trained weight I used [here](https://drive.google.com/file/d/1K3fRR7tliyxf82ckYCcajzftrB7SwWEg/view?usp=sharing)
