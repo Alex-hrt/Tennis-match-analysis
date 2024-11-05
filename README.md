@@ -34,6 +34,18 @@ Download the outputed weights from `training/runs/detect/trainX/weights` and add
 
 #### Predicting
 
-In `yolo_inference.py` change the `model` path and run the script
+In `yolo_inference.py`
 
-Output is will be found in `runs/detect/predictX`
+Uncomment the `Ball prediction` lines of code
+
+Change the `model_ball` path and run the script
+
+Output is will be found in `runs/detect/predictX/`
+
+### Object tracking
+
+In `yolo_inference.py`
+
+Uncomment the `Object tracking` lines of code
+
+Output is will be found in `runs/detect/trackX/`
