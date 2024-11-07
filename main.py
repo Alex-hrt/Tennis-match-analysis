@@ -8,7 +8,7 @@ def main():
 
     # Detecting players
     player_tracker = PlayerTracker(model_path='yolo11x')
-    player_detections = player_tracker.detect_frames(video_frames)
+    player_detections = player_tracker.detect_frames(video_frames, read_from_stub=True, stub_path="tracker_stubs/player_detections.pkl")
     
     # Draw Player Bounding Boxes
     output_video_frames = player_tracker.draw_bboxes(video_frames, player_detections)
