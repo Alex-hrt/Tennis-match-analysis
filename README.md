@@ -34,18 +34,29 @@ Download the outputed weights from `training/runs/detect/trainX/weights` and add
 
 #### Predicting
 
-In `yolo_inference.py`
-
-Uncomment the `Ball prediction` lines of code
-
-Change the `model_ball` path and run the script
+In `ball_prediction.py`, change the `model_ball` path to correspond to your computed model and run the script
 
 Output is will be found in `runs/detect/predictX/`
 
 ### Object tracking
 
-In `yolo_inference.py`
-
-Uncomment the `Object tracking` lines of code
+Run `object_tracking.py`
 
 Output is will be found in `runs/detect/trackX/`
+
+### Court key points
+
+#### Dataset
+
+Dataset found on [TennisCourtDetector](https://github.com/yastrebksv/TennisCourtDetector) by [yastrebksv](https://github.com/yastrebksv)
+
+#### Training
+
+Open `training/tennis_court_keypoints_training.ipynb`
+
+Run the Jupyter Notebook cells
+
+(Model was run locally, compute time was ~5h for 20 epochs.\
+Laptop specs: `Nvidia RTX 2060` GPU, `Intel Core i7-10750H` CPU and `32GB` of RAM)
+
+Download the outputed model from `training/keypoints_model.pth` and add them to the `models` folder
