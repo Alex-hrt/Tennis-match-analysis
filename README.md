@@ -60,3 +60,5 @@ Run the Jupyter Notebook cells
 Laptop specs: `Nvidia RTX 2060` GPU, `Intel Core i7-10750H` CPU and `32GB` of RAM)
 
 Download the outputed model from `training/keypoints_model.pth` and add them to the `models` folder
+
+(You can find my keypoints model [here](https://drive.google.com/file/d/1sg_vWnBtFHIcRE3qRcExfZrhMVNkgRsK/view?usp=sharing))
