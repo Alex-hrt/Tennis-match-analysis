@@ -1,6 +1,7 @@
 from utils import read_video, save_video
 from trackers import PlayerTracker, BallTracker
 from court_line_detector import CourtLineDetector
+from mini_court import MiniCourt
 
 
 def main():
@@ -46,6 +47,13 @@ def main():
     output_video_frames = court_line_detector.draw_keypoints_on_video(
         output_video_frames, court_keypoints
     )
+
+    # MiniCourt
+    ## Initialize Mini Court
+    mini_court = MiniCourt(video_frames[0])
+
+    ## Draw Mini Court
+    output_video_frames = mini_court.draw_mini_court(output_video_frames)
 
     # Combines frames to video
     save_video(output_video_frames, "output_videos/output_video.avi")
