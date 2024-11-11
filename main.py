@@ -36,6 +36,9 @@ def main():
     )
     ball_detections = ball_tracker.interpolate_ball_positions(ball_detections)
 
+    # Detect ball shots
+    ball_shot_frames = ball_tracker.get_ball_shot_frames(ball_detections)
+
     # Drawing Bounding Boxes
     ## Draw Player Bounding Boxes
     output_video_frames = player_tracker.draw_bboxes(video_frames, player_detections)
