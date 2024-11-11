@@ -9,6 +9,12 @@ def main():
     video_frames = read_video(input_video_path)
 
     # Detection
+
+    ## Detecting court line keypoints
+    court_model_path = "models/keypoints_model.pth"
+    court_line_detector = CourtLineDetector(court_model_path)
+    court_keypoints = court_line_detector.predict(video_frames[0])
+
     ## Detecting players
     player_tracker = PlayerTracker(model_path="yolo11x")
     player_detections = player_tracker.detect_frames(
@@ -17,17 +23,17 @@ def main():
         stub_path="tracker_stubs/player_detections.pkl",
     )
 
+    ### Choose only players
+    player_detections = player_tracker.choose_and_filter_players(
+        court_keypoints, player_detections
+    )
+
     ## Detecting ball
     ball_tracker = BallTracker(model_path="models/yolo11x_last.pt")
     ball_detections = ball_tracker.detect_frames(
         video_frames, read_from_stub=True, stub_path="tracker_stubs/ball_detections.pkl"
     )
     ball_detections = ball_tracker.interpolate_ball_positions(ball_detections)
-
-    ## Detecting Court line keypoints
-    court_model_path = "models/keypoints_model.pth"
-    court_line_detector = CourtLineDetector(court_model_path)
-    court_keypoints = court_line_detector.predict(video_frames[0])
 
     # Drawing Bounding Boxes
     ## Draw Player Bounding Boxes
