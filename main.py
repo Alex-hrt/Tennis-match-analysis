@@ -10,7 +10,6 @@ def main():
     video_frames = read_video(input_video_path)
 
     # Detection
-
     ## Detecting court line keypoints
     court_model_path = "models/keypoints_model.pth"
     court_line_detector = CourtLineDetector(court_model_path)
@@ -55,8 +54,25 @@ def main():
     ## Initialize Mini Court
     mini_court = MiniCourt(video_frames[0])
 
+    ## Convert player positions to mini court positions
+    player_mini_court_detections, ball_mini_court_detections = (
+        mini_court.convert_bounding_boxes_to_mini_court_coordinates(
+            player_detections, ball_detections, court_keypoints
+        )
+    )
+
     ## Draw Mini Court
     output_video_frames = mini_court.draw_mini_court(output_video_frames)
+
+    ## Draw player postitions on mini court
+    output_video_frames = mini_court.draw_points_on_mini_court(
+        output_video_frames, player_mini_court_detections
+    )
+
+    ## Draw ball postition on mini court
+    output_video_frames = mini_court.draw_points_on_mini_court(
+        output_video_frames, ball_mini_court_detections, color=(0, 255, 255)
+    )
 
     # Combines frames to video
     save_video(output_video_frames, "output_videos/output_video.avi")
