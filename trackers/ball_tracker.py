@@ -119,6 +119,7 @@ class BallTracker:
                 and df_ball_positions["delta_y"].iloc[i + 1] > 0
             )
 
+            # Ientify frames where a ball is hit based on changes in the y-coordinate of the ball position
             if negative_position_change or positive_position_change:
                 change_count = 0
                 for change_frame in range(
