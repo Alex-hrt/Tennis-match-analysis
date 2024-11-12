@@ -109,6 +109,9 @@ Tennis_match_analysis
 
 If you need to train custom models, refer to the Jupyter notebooks in the `training` directory. These notebooks guide you through the process of training models for ball detection and court keypoints.
 
+Once training is completed you can run `object_tracking.py`, `ball_prediction.py` and/or `main.py` to see the result of your training\
+(In `ball_prediction.py`, change the `model_ball` path to correspond to your computed model and run the script)
+
 ⚠️ **Ball detection training** ran in an AWS SageMaker instance, with a `ml.g4dn.xlarge` notebook type and took ~1h to compute for 100 epochs
 
 ⚠️ **Object tracking training:** ran locally (`Nvidia RTX 2060` GPU, `Intel Core i7-10750H` CPU, `32GB` of RAM), compute time was ~5h for 20 epochs
