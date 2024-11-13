@@ -3,8 +3,11 @@
 
 ## Overview
 
-The **Tennis Match Analysis** project is designed to automate the analysis of tennis matches.\
+The **Tennis Match Analysis** project is designed to automate the analysis of tennis matches using [Ultralytics YOLO11 ↗](https://docs.ultralytics.com/models/yolo11/)\
 It combines machine learning, computer vision, and data processing to provide insights into player performance, ball trajectory, and overall match dynamics.
+
+![Gif to show the outputed video](output_video_showcase.gif)
+
 ## Project Structure
 
 ```
@@ -15,7 +18,6 @@ Tennis_match_analysis
 │   ├── __init__.py
 │   └── court_line_detector.py
 ├── input_videos/
-│   ├── image.png
 │   └── input_video.mp4
 ├── mini_court/
 │   ├── __init__.py
@@ -42,7 +44,9 @@ Tennis_match_analysis
 ├── README.md
 ├── ball_prediction.py
 ├── main.py
-└── object_tracking.py
+├── object_tracking.py
+├── output_video_showcase.gif
+└── requirements.txt
 ```
 ## Installation
 
