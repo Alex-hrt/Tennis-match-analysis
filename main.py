@@ -380,7 +380,7 @@ def main():
     output_video_frames = draw_player_stats(output_video_frames, player_stats_data_df)
 
     # Combines frames to video
-    save_video(output_video_frames, "output_videos/output_video.avi")
+    save_video(output_video_frames, "output_videos/output_video.mp4")
 
 
 if __name__ == "__main__":
